@@ -209,7 +209,7 @@ print(answer)
 ### 安装依赖
 
 ```bash
-# 使用 uv 安装依赖（推荐）
+# 使用 uv 自动读取 pyproject.toml 并安装所有依赖包
 uv install
 
 ### 主要依赖包
@@ -220,7 +220,6 @@ uv install
 - `PyPDF2` - PDF 文件处理
 - `markdown` - Markdown 文件处理
 - `beautifulsoup4` - HTML 解析
-- `tqdm` - 进度条显示
 
 ## 常见问题
 
