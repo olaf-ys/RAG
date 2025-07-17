@@ -37,10 +37,10 @@ OPENAI_BASE_URL=https://api.openai.com/v1
 ### 3. 运行项目
 
 ```bash
-# 运行主程序
-python main.py
+# RAG.py 包含主要类的封装，可以直接运行查看演示
+python RAG.py
 
-# 或者使用 Jupyter Notebook
+# RAG.ipynb 演示如何调用这些类和方法，推荐使用 Jupyter Notebook 进行交互式学习
 jupyter notebook RAG.ipynb
 ```
 
@@ -55,8 +55,8 @@ jupyter notebook RAG.ipynb
 
 ```
 .
-├── main.py                     # 主程序入口
-├── RAG.ipynb                   # Jupyter Notebook 演示
+├── RAG.py                      # 主要类的封装实现
+├── RAG.ipynb                   # 交互式演示和方法调用示例
 ├── README.md                   # 项目说明文档
 ├── pyproject.toml              # 项目依赖配置
 ├── uv.lock                     # 依赖锁定文件
@@ -68,6 +68,19 @@ jupyter notebook RAG.ipynb
     ├── documents.txt           # 分块后的文档内容
     └── vectors.npy             # 文档向量数据
 ```
+
+## 项目文件说明
+
+### RAG.py
+- 包含所有核心类的封装实现
+- 可以直接运行查看完整的RAG系统演示
+- 包含 ReadFiles、OpenAIEmbedding、VectorStore、GPT4oChat 等主要类
+
+### RAG.ipynb
+- 交互式 Jupyter Notebook 演示文件
+- 详细展示如何调用各个类和方法
+- 适合学习和实验RAG系统的各个组件
+- 支持逐步执行和结果查看
 
 ## 核心功能模块
 
@@ -198,10 +211,6 @@ print(answer)
 ```bash
 # 使用 uv 安装依赖（推荐）
 uv install
-
-# 或者使用 pip
-pip install -r requirements.txt
-```
 
 ### 主要依赖包
 - `openai` - OpenAI API 客户端
