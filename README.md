@@ -1,55 +1,42 @@
 # RAG (Retrieval-Augmented Generation) 项目
 
-这是一个基于 OpenAI API 的 RAG（检索增强生成）项目，实现了文档向量化存储、相似度检索和智能问答功能。
+这是一个从0到1搭建的 RAG（检索增强生成）个人迷你项目，实现了文档向量化存储、相似度检索和智能问答功能。
 
-## 项目简介
+## 主要功能
 
-本项目实现了一个完整的 RAG 系统，包括：
 - 📄 多格式文档读取（PDF、Markdown、TXT）
 - 🔍 文档智能分块处理
 - 🧮 OpenAI Embedding 向量化
 - 💾 向量数据库存储与检索
 - 🤖 GPT-4o 智能问答
 
-## 环境变量配置
+## 🚀 快速开始
 
-为了安全地管理 API 密钥，本项目使用环境变量配置。请按照以下步骤设置：
+### python版本
 
-### 1. 创建 .env 文件
+- Python >= 3.13
 
-复制 `.env.example` 文件为 `.env`：
+### 环境变量配置
 
-```bash
-cp .env.example .env
+1. 创建 `.env` 文件并配置API密钥：
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_BASE_URL=https://api.openai.com/v1  # 或您的自定义API端点
 ```
 
-### 2. 配置 API 密钥
+## 项目主要文件说明
 
-在 `.env` 文件中填入您的实际 API 密钥：
+### RAG.py
+- 包含所有核心类的封装实现
+- 可以直接运行查看完整的RAG系统演示
+- 包含 ReadFiles、OpenAIEmbedding、VectorStore、GPT4oChat 等主要类
 
-```
-OPENAI_API_KEY=your_actual_api_key_here
-OPENAI_BASE_URL=https://api.openai.com/v1
-```
-
-**注意**: 本项目支持多种 API 端点，包括 OpenAI 官方 API 和兼容的代理服务。
-
-### 3. 运行项目
-
-```bash
-# RAG.py 包含主要类的封装，可以直接运行查看演示
-python RAG.py
-
-# RAG.ipynb 演示如何调用这些类和方法，推荐使用 Jupyter Notebook 进行交互式学习
-jupyter notebook RAG.ipynb
-```
-
-## 安全提示
-
-- ✅ `.env` 文件已添加到 `.gitignore`，不会被提交到版本控制
-- ✅ 使用环境变量而非硬编码API密钥
-- ✅ 提供了 `.env.example` 模板文件
-- ❌ 切勿将真实的API密钥提交到代码仓库
+### RAG.ipynb
+- 交互式 Jupyter Notebook 演示文件
+- 详细展示如何调用各个类和方法
+- 适合学习和实验RAG系统的各个组件
+- 支持逐步执行和结果查看
 
 ## 项目结构
 
@@ -68,19 +55,6 @@ jupyter notebook RAG.ipynb
     ├── documents.txt           # 分块后的文档内容
     └── vectors.npy             # 文档向量数据
 ```
-
-## 项目文件说明
-
-### RAG.py
-- 包含所有核心类的封装实现
-- 可以直接运行查看完整的RAG系统演示
-- 包含 ReadFiles、OpenAIEmbedding、VectorStore、GPT4oChat 等主要类
-
-### RAG.ipynb
-- 交互式 Jupyter Notebook 演示文件
-- 详细展示如何调用各个类和方法
-- 适合学习和实验RAG系统的各个组件
-- 支持逐步执行和结果查看
 
 ## 核心功能模块
 
@@ -189,39 +163,7 @@ print(answer)
 - 🧠 上下文感知的回答生成
 - 🌐 中文优化的回答质量
 
-## API 配置说明
-
-### 支持的模型
-- **Embedding 模型**: `text-embedding-3-large`
-- **聊天模型**: `gpt-4o-mini`
-
-### 支持的 API 端点
-- OpenAI 官方 API: `https://api.openai.com/v1`
-- 兼容的代理 API 服务
-
-## 项目结构
-
-## 依赖安装
-
-### Python 环境要求
-本项目推荐使用 Python 3.8+ 版本。
-
-### 安装依赖
-
-```bash
-# 使用 uv 自动读取 pyproject.toml 并安装所有依赖包
-uv install
-
-### 主要依赖包
-- `openai` - OpenAI API 客户端
-- `python-dotenv` - 环境变量管理
-- `numpy` - 数值计算
-- `tiktoken` - Token 计数
-- `PyPDF2` - PDF 文件处理
-- `markdown` - Markdown 文件处理
-- `beautifulsoup4` - HTML 解析
-
-## 常见问题
+## ❓ 常见问题
 
 ### Q: 如何更换 Embedding 模型？
 A: 在 `OpenAIEmbedding.get_embedding()` 方法中修改 `model` 参数。
@@ -235,14 +177,6 @@ A: 修改 `PROMPT_TEMPLATE` 中的模板内容。
 ### Q: 支持哪些文档格式？
 A: 目前支持 PDF、Markdown 和 TXT 文件格式。
 
-## 贡献指南
-
-欢迎提交 Issue 和 Pull Request 来改进项目！
-
-## 许可证
+## 📝 许可证
 
 [MIT License](LICENSE)
-
----
-
-**重要提示**: 使用本项目需要有效的 OpenAI API 密钥。请确保您的 API 密钥有足够的额度来支持 Embedding 和聊天功能的调用。
