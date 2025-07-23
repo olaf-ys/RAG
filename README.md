@@ -40,7 +40,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_BASE_URL=https://api.openai.com/v1  # 或您的自定义API端点
 ```
 
-## 项目主要文件说明
+## 主要文件说明
 
 ### RAG.py
 - 包含所有核心类的封装实现
