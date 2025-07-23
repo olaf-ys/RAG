@@ -25,7 +25,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_BASE_URL=https://api.openai.com/v1  # 或您的自定义API端点
 ```
 
-## 主要文件
+## 📄 主要文件
 
 ### RAG.py
 - 包含所有核心类的封装实现
@@ -56,7 +56,7 @@ OPENAI_BASE_URL=https://api.openai.com/v1  # 或您的自定义API端点
     └── vectors.npy             # 文档向量数据
 ```
 
-## 核心功能模块
+## 🛠️ 核心功能模块
 
 ### 1. 文档处理模块 (ReadFiles)
 
@@ -123,7 +123,7 @@ chat = GPT4oChat(api_key=api_key)
 answer = chat.chat("用户问题", [], context_content)
 ```
 
-## 使用方法
+## 📖 使用方法
 
 ### 完整 RAG 流程示例
 
